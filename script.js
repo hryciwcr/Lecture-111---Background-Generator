@@ -3,11 +3,17 @@ var h3 = document.getElementsByTagName("h3")[0];
 var colourinput1 = document.getElementsByClassName("colour1")[0];
 var colourinput2 = document.getElementsByClassName("colour2")[0];
 
-colourinput1.addEventListener("input", function() {
-	console.log(colourinput1.value);
-});
-colourinput2.addEventListener("input", function() {
-	console.log(colourinput2.value);
-});
+var body = document.getElementsByTagName("body")[0];
 
-console.log(h3, "\n", colourinput1, "\n", colourinput1);
+function updateColour() {
+	body.style.background = 
+		"linear-gradient(to right, " 
+		+ colourinput1.value
+		+ ", "
+		+ colourinput2.value
+		+ ")";
+
+	h3.textContent = body.style.background;
+}
+// colourinput1.addEventListener("input", updateColour);
+// colourinput2.addEventListener("input", updateColour);
